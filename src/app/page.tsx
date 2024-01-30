@@ -3,6 +3,7 @@ import { useMutation, useQuery } from "convex/react";
 import Image from "next/image";
 import { useState } from "react";
 import { api } from "../../convex/_generated/api";
+import headerImage from "../../public/images/kurt-and-cecile-proposal.jpg";
 
 export default function Home() {
   const [text, setText] = useState("");
@@ -12,11 +13,12 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-between p-24 relative">
       <Image
         alt="kurt-and-cecile"
-        src={"/images/kurt-and-cecile-proposal.jpg"}
+        src={headerImage}
         layout="fill"
         placeholder="blur"
         objectFit="cover"
         objectPosition="bottom"
+        priority
       />
       <div className="z-10  max-w-5xl w-full flex flex-col items-start justify-between  text-sm lg:flex">
         <header className="bg-black flex content-center justify-center mb-8 bg-opacity-30 rounded-xl">
