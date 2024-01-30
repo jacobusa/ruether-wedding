@@ -14,6 +14,7 @@ export default function Home() {
         alt="kurt-and-cecile"
         src={"/images/kurt-and-cecile-proposal.jpg"}
         layout="fill"
+        placeholder="blur"
         objectFit="cover"
         objectPosition="bottom"
       />
