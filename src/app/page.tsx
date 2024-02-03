@@ -4,7 +4,6 @@ import Image from "next/image";
 import { useState } from "react";
 import { api } from "../../convex/_generated/api";
 import headerImage from "../../public/images/kurt-and-cecile-proposal.jpg";
-import Link from "next/link";
 
 export default function Home() {
   const [text, setText] = useState("");
@@ -22,7 +21,6 @@ export default function Home() {
         priority
       />
       <div className="z-10  max-w-5xl w-full flex flex-col items-start justify-between  text-sm lg:flex">
-        <Link href={"/upload"}>upload</Link>
         <header className="bg-black flex content-center justify-center mb-8 bg-opacity-30 rounded-xl">
           <h1 className="p-8 text-4xl font-extrabold mt-0 leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
             Kurt and Cecile
