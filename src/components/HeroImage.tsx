@@ -1,9 +1,9 @@
 import * as React from "react";
 import Image from "next/image";
-import headerImage from "../public/images/kurt-and-cecile-proposal.jpg";
+import headerImage from "../../public/images/kurt-and-cecile-proposal.jpg";
 import { useEffect, useState } from "react";
 
-export const Hero: React.FC = () => {
+export const HeroImage: React.FC = () => {
   const [objectPosition, setObjectPosition] = useState("bottom");
 
   useEffect(() => {
