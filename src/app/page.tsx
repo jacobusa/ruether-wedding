@@ -6,6 +6,7 @@ import headerImage from "../../public/images/kurt-and-cecile-proposal.jpg";
 import { Hero } from "@/components/Hero";
 import { OurStory } from "@/components/OurStory";
 import { Gallery } from "@/components/Gallery";
+import { Quote } from "@/components/Quote";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <Hero />
       <OurStory />
       <Gallery />
+      <Quote />
     </main>
   );
 }

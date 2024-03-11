@@ -44,14 +44,13 @@ export const Gallery: React.FC = () => {
   }, []);
 
   return (
-    <div>
+    <div className="relative">
       <div ref={container} className={styles.gallery}>
         <Column images={[images[0], images[1], images[2]]} y={y1} />
         <Column images={[images[3], images[4], images[5]]} y={y2} />
         <Column images={[images[6], images[7], images[8]]} y={y3} />
         <Column images={[images[9], images[10], images[11]]} y={y4} />
       </div>
-      <div className={styles.spacer}></div>
     </div>
   );
 };
@@ -68,7 +67,12 @@ const Column = ({
       {images.map((src: any, index: any) => {
         return (
           <div key={index} className={styles.imageContainer}>
-            <Image alt="image" fill src={`/images/gallery/${src}`} />
+            <Image
+              alt="image"
+              sizes="100px"
+              fill
+              src={`/images/gallery/${src}`}
+            />
           </div>
         );
       })}
