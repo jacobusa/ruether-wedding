@@ -5,12 +5,14 @@ import { api } from "../../convex/_generated/api";
 import headerImage from "../../public/images/kurt-and-cecile-proposal.jpg";
 import { Hero } from "@/components/Hero";
 import { OurStory } from "@/components/OurStory";
+import { Gallery } from "@/components/Gallery";
 
 export default function Home() {
   return (
     <main className="overflow-hidden font-bitter">
       <Hero />
       <OurStory />
+      <Gallery />
     </main>
   );
 }

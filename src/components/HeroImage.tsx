@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 
 export const HeroImage: React.FC = () => {
   const [objectPosition, setObjectPosition] = useState("bottom");
+  const [hidden, setHidden] = useState(false);
 
   useEffect(() => {
     // Function to update state based on window width
@@ -17,13 +18,27 @@ export const HeroImage: React.FC = () => {
       setObjectPosition("right 0 bottom 0"); // Adjust as needed for larger screens
       return;
     };
+    const updateHidden = () => {
+      const scroll = scrollY;
+      if (scroll < 1000) {
+        setHidden(false); // Adjust as needed for larger screens
+        return;
+      }
+      setHidden(true); // Adjust as needed for larger screens
+      return;
+    };
 
     // Update position on mount and when window resizes
     updatePosition();
+    updateHidden();
     window.addEventListener("resize", updatePosition);
+    window.addEventListener("scroll", updateHidden);
 
     // Cleanup event listener
-    return () => window.removeEventListener("resize", updatePosition);
+    return () => {
+      window.removeEventListener("resize", updatePosition);
+      window.removeEventListener("scroll", updateHidden);
+    };
   }, []); // Empty dependency array ensures effect runs only on mount and unmount
 
   return (
@@ -32,7 +47,7 @@ export const HeroImage: React.FC = () => {
         alt="kurt-and-cecile"
         src={headerImage}
         style={{ objectPosition, objectFit: "cover" }}
-        className="transition-all"
+        className={`transition-all ${hidden && "hidden"}`}
         fill
         // objectFit="cover" // This makes the image cover the div, similar to background-size: cover;
         sizes="100vw"
