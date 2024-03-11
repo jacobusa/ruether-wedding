@@ -3,7 +3,7 @@ import Image from "next/image";
 import headerImage from "../public/images/kurt-and-cecile-proposal.jpg";
 import { useEffect, useState } from "react";
 
-export const HeroImage: React.FC = () => {
+export const Hero: React.FC = () => {
   const [objectPosition, setObjectPosition] = useState("bottom");
 
   useEffect(() => {
@@ -28,23 +28,21 @@ export const HeroImage: React.FC = () => {
 
   return (
     <>
-      <div className="fixed">
-        <Image
-          alt="kurt-and-cecile"
-          src={headerImage}
-          style={{ objectPosition, objectFit: "cover" }}
-          className="transition-all"
-          fill
-          // objectFit="cover" // This makes the image cover the div, similar to background-size: cover;
-          sizes="100vw"
-          // objectPosition={objectPosition}
-          // objectPosition="-700px bottom"
-          // quality={100} // Adjust quality as needed
-          priority // Load the image immediately with the highest priority
-          placeholder="blur" // Optional: Use a blurred version while loading (requires a blurDataURL prop)
-        />
-      </div>
-      <div className="absolute h-[100vh] w-[100vw] z-0 bg-black/25"></div>
+      <Image
+        alt="kurt-and-cecile"
+        src={headerImage}
+        style={{ objectPosition, objectFit: "cover" }}
+        className="transition-all"
+        fill
+        // objectFit="cover" // This makes the image cover the div, similar to background-size: cover;
+        sizes="100vw"
+        // objectPosition={objectPosition}
+        // objectPosition="-700px bottom"
+        // quality={100} // Adjust quality as needed
+        priority // Load the image immediately with the highest priority
+        placeholder="blur" // Optional: Use a blurred version while loading (requires a blurDataURL prop)
+      />
+      <div id="overlay" className="bg-black/40 absolute inset-0 z-0"></div>
     </>
   );
 };

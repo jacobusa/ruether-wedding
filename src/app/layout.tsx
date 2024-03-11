@@ -1,9 +1,25 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Alex_Brush, Bitter, Inter, PT_Serif } from "next/font/google";
 import ConvexClientProvider from "./ConvexClientProvider";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
+const alexBrush = Alex_Brush({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-alex-brush",
+});
+const ptSerif = PT_Serif({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-pt-serif",
+});
+
+const bitter = Bitter({
+  subsets: ["cyrillic"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-bitter",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,7 +33,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body
+        className={`${inter.className} ${alexBrush.variable} ${ptSerif.variable} ${bitter.variable}`}
+      >
         <ConvexClientProvider>{children}</ConvexClientProvider>
       </body>
     </html>
