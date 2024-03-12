@@ -13,12 +13,9 @@ export const Quote: React.FC = () => {
             color="#bf896b"
           />
           <h6 className="text-2xl">
-            <q className="text-gray-500">
-              True love stands by your side on good days, and even closer on bad
-              days.
-            </q>
+            <q className="text-gray-500">Kurt is a POES</q>
             <p className="mt-4 text-gray-400 uppercase text-sm tracking-wider">
-              The Internet
+              - Everybody
             </p>
           </h6>
           <FaQuoteRight
