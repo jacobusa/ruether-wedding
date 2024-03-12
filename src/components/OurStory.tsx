@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export const OurStory: React.FC = () => {
   return (
-    <section className="bg-gray-100 min-h-screen">
+    <section className="bg-gray-100 min-h-[110vh]">
       <div className="w-full pt-28 flex justify-center flex-col">
         <Image
           alt="wedding flower"

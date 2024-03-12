@@ -7,6 +7,9 @@ import { Hero } from "@/components/Hero";
 import { OurStory } from "@/components/OurStory";
 import { Gallery } from "@/components/Gallery";
 import { Quote } from "@/components/Quote";
+import { Countdown } from "@/components/Countdown";
+import { RSVP } from "@/components/RSVP";
+import { Organization } from "@/components/Organization";
 
 export default function Home() {
   return (
@@ -15,6 +18,9 @@ export default function Home() {
       <OurStory />
       <Gallery />
       <Quote />
+      <Countdown />
+      <Organization />
+      <RSVP />
     </main>
   );
 }

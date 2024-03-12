@@ -9,6 +9,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        primary: "#bf896b",
+      },
       fontFamily: {
         brush: ["var(--font-alex-brush)"],
         ptSerif: ["var(--font-pt-serif)"],

@@ -69,7 +69,7 @@ const Column = ({
           <div key={index} className={styles.imageContainer}>
             <Image
               alt="image"
-              sizes="100px"
+              sizes="100%"
               fill
               src={`/images/gallery/${src}`}
             />
