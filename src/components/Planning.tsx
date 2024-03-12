@@ -8,7 +8,7 @@ import gallery2 from "../../public/images/gallery/6.jpg";
 import gallery3 from "../../public/images/gallery/7.jpg";
 import gallery4 from "../../public/images/gallery/10.jpg";
 
-export const Organization: React.FC = () => {
+export const Planning: React.FC = () => {
   return (
     <section className="bg-gray-100 text-gray-600 min-h-[70vh]">
       <div className="max-w-[1300px] mx-auto">
