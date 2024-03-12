@@ -72,6 +72,7 @@ const Column = ({
               sizes="100%"
               fill
               src={`/images/gallery/${src}`}
+              priority
             />
           </div>
         );

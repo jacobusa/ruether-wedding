@@ -50,14 +50,14 @@ export const RSVP = () => {
             ></div>
           </motion.div>
         </div>
-        <div className="basis-5/12  relative border-2 border-primary max-w-96 h-[50vh] self-center bg-white">
+        <div className="basis-5/12  relative border-2 border-primary max-w-96  self-center bg-white">
           <Image
             src={whiteFlowerImage}
             className="absolute -translate-y-56 -z-10 top-[40%] left-[90%]"
             alt="white flower"
             sizes="100%"
           />
-          <form className="shadow-2xl relative z-10 p-10 flex justify-between flex-col shadow-primary ring-1 ring-gray-900/5 h-full  md:col-span-2">
+          <form className="shadow-2xl relative z-10 p-10 flex justify-between space-y-4 flex-col shadow-primary ring-1 ring-gray-900/5 h-full  md:col-span-2">
             <div>
               <label
                 htmlFor="name"
