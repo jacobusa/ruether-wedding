@@ -1,20 +1,25 @@
-"use client";
-
 import { FaLongArrowAltLeft } from "react-icons/fa";
 
 import { ContactForm } from "@/components/ContactForm";
 import Link from "next/link";
+import { auth } from "@/auth";
+import { Navbar } from "@/components/Navbar";
 
-export default function ContactPage() {
+export default async function ContactPage() {
+  const session = await auth();
   return (
     <>
       <section id="our-story" className="bg-gray-200 p-4 h-screen pb-44">
-        <div className="text-gray-400 flex  justify-center gap-2 items-center absolute top-5 left-16">
-          <FaLongArrowAltLeft className="text-primary" />
-          <Link href="/" className="text-primary">
-            Back to Home
-          </Link>
-        </div>
+        {session ? (
+          <Navbar />
+        ) : (
+          <div className="text-gray-400 flex  justify-center gap-2 items-center absolute top-5 left-16">
+            <FaLongArrowAltLeft className="text-primary" />
+            <Link href="/" className="text-primary">
+              Back to Home
+            </Link>
+          </div>
+        )}
         <div className="w-full pt-28 flex justify-center flex-col">
           <h4 className="text-primary text-2xl md:text-4xl font-light text-center">
             Contact Kurt and Cecile

@@ -2,7 +2,7 @@ import { auth } from "@/auth";
 import { ConvexClientProvider } from "../ConvexClientProvider";
 import { SignOut } from "@/components/SignOut";
 
-export default async function WelcomeLayout({
+export default async function RSVPLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -10,7 +10,7 @@ export default async function WelcomeLayout({
   const session = await auth();
   return (
     <>
-      <main className="container max-w-2xl flex flex-col gap-8">
+      <main className=" flex bg-gray-100 min-h-screen w-screen flex-col gap-8">
         <ConvexClientProvider session={session}>
           {children}
         </ConvexClientProvider>

@@ -17,7 +17,7 @@ export default async function Home() {
       {/* <ConvexPublicProvider> */}
       <ConvexClientProvider session={session}>
         <main className="overflow-hidden font-bitter">
-          <Navbar />
+          {!!session && <Navbar />}
           <Hero />
           <OurStory />
           <Gallery />

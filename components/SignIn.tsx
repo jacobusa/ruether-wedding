@@ -9,7 +9,7 @@ export const SignIn: FC<SignInProps> = ({ text = "Sign In" }) => {
     <form
       action={async () => {
         "use server";
-        redirect("/welcome");
+        redirect("/rsvp");
       }}
     >
       <button type="submit">{text}</button>

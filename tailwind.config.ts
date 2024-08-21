@@ -21,6 +21,7 @@ const config: Config = {
       },
       colors: {
         primary: "#bf896b",
+        secondary: "#2d2d2d",
       },
       fontFamily: {
         brush: ["var(--font-alex-brush)"],
@@ -34,6 +35,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/forms")],
 };
 export default config;

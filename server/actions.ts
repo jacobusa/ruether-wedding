@@ -1,5 +1,5 @@
 "use server";
-import { signIn } from "@/auth";
+import { signIn, signOut } from "@/auth";
 import { api } from "@/convex/_generated/api";
 import { Id } from "@/convex/_generated/dataModel";
 import { fetchQuery } from "convex/nextjs";
@@ -21,7 +21,7 @@ export async function sendRSVPLink(formData: FormData) {
   await signIn("resend", {
     email: user.email,
     redirect: false,
-    redirectTo: "/welcome",
+    redirectTo: "/rsvp",
   });
 }
 
@@ -59,4 +59,8 @@ export const sendEmail = async (data: ContactFormInputs) => {
   if (result.error) {
     return { success: false, error: result.error.format() };
   }
+};
+
+export const signOutAction = async () => {
+  await signOut({ redirectTo: "/" });
 };

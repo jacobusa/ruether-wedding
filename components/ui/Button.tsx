@@ -22,7 +22,7 @@ type ButtonProps = ButtonHTMLAttributes<
 
 const buttonClasses = {
   primary:
-    "border w-full tracking-widest uppercase text-primary font-light text-xs border-primary bg-white hover:bg-primary hover:text-white transition-all  px-2 white py-3",
+    "border w-full tracking-widest uppercase text-primary font-light text-xs border-primary bg-transparent hover:bg-primary hover:text-white transition-all  px-2 white py-3",
   // primary:
   //   "bg-theme-primary text-[14px] rounded-xl text-white font-medium hover:opacity-80 active:opacity-80 ",
   // secondary:
@@ -52,7 +52,7 @@ const Button: FC<ButtonProps> = ({
       disabled={disabled}
       onClick={onClick}
       className={classNames(
-        "h-10 px-10",
+        "h-10 px-10 ",
         buttonClasses[variant],
         `${className}`
       )}

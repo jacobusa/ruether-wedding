@@ -35,7 +35,7 @@ export const getViewerInfo = query({
       throw new Error("User is not authenticated");
     }
     return {
-      viewer: (await ctx.db.get(viewerId))!.email ?? "missing email",
+      viewer: await ctx.db.get(viewerId),
     };
 
     // const userIdentity = (await ctx.auth.getUserIdentity())!;

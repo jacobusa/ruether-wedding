@@ -38,8 +38,8 @@ export const RSVPMagicLinkEmail = ({ url, host }: RSVPMagicLinkEmailProps) => (
 
         <Section style={body}>
           <Text style={paragraph}>
-            <Link style={link} href={url}>
-              👉 Click here to sign in 👈
+            <Link style={button} href={url}>
+              Complete your RSVP
             </Link>
           </Text>
           <Text style={paragraph}>
@@ -95,8 +95,13 @@ const paragraph = {
   lineHeight: "26px",
 };
 
-const link = {
-  color: "#bf896b",
+const button = {
+  fontSize: "14px",
+  backgroundColor: "#bf896b",
+  color: "#fff",
+  lineHeight: 1.5,
+  borderRadius: "0.4em",
+  padding: "12px 24px",
 };
 
 const websiteLink = {
