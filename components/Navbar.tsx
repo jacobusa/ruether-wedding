@@ -59,13 +59,13 @@ export const Navbar: FC<NavbarProps> = () => {
                       <span className="sr-only">Close sidebar</span>
                       <XMarkIcon
                         aria-hidden="true"
-                        className="h-6 w-6 text-white"
+                        className="h-6 w-6 text-black"
                       />
                     </button>
                   </div>
                 </TransitionChild>
                 {/* Sidebar component, swap this element with another sidebar if you like */}
-                <div className="flex grow flex-col gap-y-5 overflow-y-auto z-50 bg-gray-200 px-6 ring-1 ring-white/10">
+                <div className="flex grow flex-col gap-y-5 overflow-y-auto z-50 bg-gray-100 border-r border-primary px-6 ring-1 ring-white/10">
                   <div className="flex h-16 shrink-0 items-center">
                     <div className="text-gray-400 flex  justify-center gap-2 items-center">
                       <FaLongArrowAltLeft className="text-primary" />
@@ -89,7 +89,7 @@ export const Navbar: FC<NavbarProps> = () => {
                                   pathname.includes(item.href)
                                     ? "bg-primary text-white"
                                     : "text-gray-800 hover:bg-primary hover:text-white",
-                                  "group flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6"
+                                  "group flex gap-x-3 rounded-sm p-2 text-sm font-semibold leading-6"
                                 )}
                               >
                                 <item.icon

@@ -9,7 +9,7 @@ export default async function ContactPage() {
   const session = await auth();
   return (
     <>
-      <section id="our-story" className="bg-gray-200 p-4 h-screen pb-44">
+      <section className="bg-gray-200  h-screen pb-44">
         {session ? (
           <Navbar />
         ) : (

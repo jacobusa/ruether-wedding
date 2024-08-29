@@ -1,4 +1,4 @@
-export default async function ErrorLayout({
+export default function ErrorLayout({
   children,
 }: {
   children: React.ReactNode;
