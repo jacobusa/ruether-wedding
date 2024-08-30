@@ -10,9 +10,12 @@ export const getUsersByName = query({
     }
     const users = await ctx.db.query("users").collect();
     return users
-      .filter((user) =>
-        user.name?.toLocaleLowerCase().includes(args.name!.toLocaleLowerCase())
-      )
+      .filter((user) => {
+        const fullName = `${user.firstName} ${user.lastName}`;
+        return fullName
+          ?.toLocaleLowerCase()
+          .includes(args.name!.toLocaleLowerCase());
+      })
       .slice(0, 1);
   },
 });

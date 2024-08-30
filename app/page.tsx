@@ -9,6 +9,9 @@ import { Timeline } from "@/components/Timeline";
 import { ConvexClientProvider } from "./ConvexClientProvider";
 import { RSVP } from "@/components/RSVP";
 import { auth } from "@/auth";
+import { Directions } from "@/components/Directions";
+import { WeddingParty } from "@/components/WeddingParty";
+import { Registry } from "@/components/Registry";
 
 export default async function Home() {
   const session = await auth();
@@ -25,6 +28,9 @@ export default async function Home() {
           <Countdown />
           <Timeline />
           <RSVP />
+          <Directions />
+          <WeddingParty />
+          <Registry />
           <Footer />
         </main>
         {/* </ConvexPublicProvider> */}
@@ -32,3 +38,4 @@ export default async function Home() {
     </>
   );
 }
+// https://denver-2.wedsites.com

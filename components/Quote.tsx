@@ -6,21 +6,24 @@ export const Quote: React.FC = () => {
     <section className="bg-gray-50 h-[70vh] ">
       <div className="h-40" />
       <div className="bg-[#f3f0ed] py-4">
-        <div className="translate-y-20 flex justify-center content-center flex-col max-w-[500px] mx-auto items-center text-center border px-4 py-5 border-[#bf896b]">
+        <div className="translate-y-20 flex justify-center content-center flex-col max-w-[500px] mx-auto items-center text-center border px-4 py-5 border-primary">
           <FaQuoteLeft
             size={30}
             className="-translate-y-10 bg-[#f3f0ed] w-10"
-            color="#bf896b"
+            color="#8ec2ce"
           />
           <h6 className="text-2xl">
-            <q className="text-gray-500">Kurt is a POES</q>
-            <p className="mt-4 text-gray-400 uppercase text-sm tracking-wider">
-              - Everybody
+            <q className="text-gray-500">
+              I would rather share one lifetime with you than face all the ages
+              of this world alone.
+            </q>
+            <p className="mt-6 text-gray-400 uppercase text-sm tracking-wider">
+              - J.R.R. Tolkien
             </p>
           </h6>
           <FaQuoteRight
             className="translate-y-8 bg-gray-50 w-10"
-            color="#bf896b"
+            color="#8ec2ce"
           />
         </div>
       </div>

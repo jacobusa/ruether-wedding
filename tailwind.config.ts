@@ -20,8 +20,11 @@ const config: Config = {
         "26": "104px",
       },
       colors: {
-        primary: "#bf896b",
-        secondary: "#2d2d2d",
+        primary: "#8ec2ce",
+        // primary: "#bf896b",
+        // secondary: "#2d2d2d",
+        secondary: "#035069",
+        tertiary: "#f0f4f8",
       },
       fontFamily: {
         brush: ["var(--font-alex-brush)"],

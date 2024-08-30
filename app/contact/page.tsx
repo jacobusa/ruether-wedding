@@ -21,7 +21,7 @@ export default async function ContactPage() {
           </div>
         )}
         <div className="w-full pt-28 flex justify-center flex-col">
-          <h4 className="text-primary text-2xl md:text-4xl font-light text-center">
+          <h4 className="text-secondary  text-2xl md:text-5xl font-light text-center">
             Contact Kurt and Cecile
           </h4>
           <p className="max-w-[500px] text-gray-500 text-center  font-light py-4 self-center text-sm md:text-base tracking-wide">

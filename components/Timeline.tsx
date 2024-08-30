@@ -3,14 +3,14 @@ import gallery1 from "../public/images/gallery/1.jpg";
 import gallery2 from "../public/images/gallery/2.jpg";
 import gallery3 from "../public/images/gallery/3.jpg";
 import gallery4 from "../public/images/gallery/4.jpg";
-import flowerImage from "../public/images/flower.png";
+import flowerImage from "../public/images/single-gold-flower.png";
 import Image from "next/image";
 
 export const Timeline: FC = () => {
   return (
     <section className="antialiased bg-gray-100 text-gray-800 flex flex-col">
-      <h5 className="pt-20 font-brush mx-auto text-[#bf896b] text-5xl sm:text-7xl mb-4">
-        Wedding Timeline
+      <h5 className="pt-20 font-brush mx-auto text-secondary text-5xl sm:text-7xl mb-4">
+        Wedding Day
       </h5>
       <div className="container relative mx-auto px-6 flex flex-col space-y-8">
         <div className="absolute w-2 z-0 h-full bg-white shadow-md left-17 inset-0 md:mx-auto md:right-0 md:left-0"></div>
@@ -107,7 +107,7 @@ export const Timeline: FC = () => {
       </div>
       <Image
         alt="wedding flower"
-        className="w-36 mt-7 self-center"
+        className="w-48 mt-20 self-center"
         src={flowerImage}
       />
     </section>

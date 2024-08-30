@@ -17,6 +17,7 @@ import type {
 import type * as auth from "../auth.js";
 import type * as authAdapter from "../authAdapter.js";
 import type * as http from "../http.js";
+import type * as rsvp from "../rsvp.js";
 import type * as users from "../users.js";
 
 /**
@@ -31,6 +32,7 @@ declare const fullApi: ApiFromModules<{
   auth: typeof auth;
   authAdapter: typeof authAdapter;
   http: typeof http;
+  rsvp: typeof rsvp;
   users: typeof users;
 }>;
 export declare const api: FilterApi<

@@ -6,7 +6,9 @@ import { Validator, v } from "convex/values";
 
 export const userSchema = {
   email: v.string(),
-  name: v.optional(v.string()),
+  firstName: v.string(),
+  lastName: v.string(),
+  admin: v.optional(v.boolean()),
   emailVerified: v.optional(v.number()),
   image: v.optional(v.string()),
 };
@@ -70,6 +72,36 @@ const authTables = {
     .index("credentialID", ["credentialID"]),
 };
 
+export const rsvpSchema = {
+  userId: v.id("users"),
+  firstName: v.string(),
+  lastName: v.string(),
+  email: v.string(),
+  phoneNumber: v.optional(v.string()),
+  hasPlusOne: v.boolean(),
+  plusOneFirstName: v.optional(v.string()),
+  plusOneLastName: v.optional(v.string()),
+  plusOneEmail: v.optional(v.string()),
+  country: v.string(),
+  province: v.string(),
+  street: v.string(),
+  city: v.string(),
+  zip: v.string(),
+  mealSelection: v.union(
+    v.literal("Meat"),
+    v.literal("Fish"),
+    v.literal("Vegetarian")
+  ),
+  accomodation: v.optional(v.string()),
+  accessabilityNeeds: v.optional(v.string()),
+  dietaryRestrictions: v.optional(v.string()),
+  transport: v.optional(v.string()),
+  songRequest: v.optional(v.string()),
+  marriageAdvice: v.optional(v.string()),
+  cocktailSuggestion: v.optional(v.string()),
+};
+
 export default defineSchema({
   ...authTables,
+  rsvp: defineTable(rsvpSchema),
 });

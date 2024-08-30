@@ -36,8 +36,8 @@ dependencies:
     specifier: ^1.11.2
     version: 1.14.1(react-dom@18.2.0)(react@18.2.0)
   convex-helpers:
-    specifier: ^0.1.35
-    version: 0.1.51(convex@1.14.1)(react@18.2.0)(zod@3.23.8)
+    specifier: ^0.1.54
+    version: 0.1.54(convex@1.14.1)(react@18.2.0)(zod@3.23.8)
   eslint:
     specifier: 8.49.0
     version: 8.49.0
@@ -2978,8 +2978,9 @@ packages:
     resolution: {integrity: sha512-Kvp459HrV2FEJ1CAsi1Ku+MY3kasH19TFykTz2xWmMeq6bk2NU3XXvfJ+Q61m0xktWwt+1HSYf3JZsTms3aRJg==}
     dev: false
 
-  /convex-helpers@0.1.51(convex@1.14.1)(react@18.2.0)(zod@3.23.8):
-    resolution: {integrity: sha512-9k+X5OOqSG2w2knmagkyZF637GUKhC2RXa5YsRokDFn+CGDlOl1wCDii9ec+07TXl0G5TBDgitSqdUpYJMiQCg==}
+  /convex-helpers@0.1.54(convex@1.14.1)(react@18.2.0)(zod@3.23.8):
+    resolution: {integrity: sha512-oYBjdfOUJdPRn9lPtH27B2rXsEPr2liiuFHIaZxgKhEwp/+f5uu1T8U5iOpNo+luavgjckO2IgNRBHnMmwfcSg==}
+    hasBin: true
     peerDependencies:
       convex: ^1.13.0
       hono: ^4.0.5

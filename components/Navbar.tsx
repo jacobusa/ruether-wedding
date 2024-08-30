@@ -17,8 +17,6 @@ import { FaLongArrowAltLeft } from "react-icons/fa";
 import { IoFlowerOutline } from "react-icons/io5";
 import { usePathname } from "next/navigation";
 import { CiMail } from "react-icons/ci";
-import { useQuery } from "convex/react";
-import { api } from "@/convex/_generated/api";
 
 const navigation = [
   { name: "RSVP Form", href: "/rsvp", icon: IoFlowerOutline },
@@ -27,7 +25,6 @@ const navigation = [
 
 interface NavbarProps {}
 export const Navbar: FC<NavbarProps> = () => {
-  const { viewer } = useQuery(api.users.getViewerInfo) ?? {};
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const pathname = usePathname();
   return (
@@ -74,9 +71,6 @@ export const Navbar: FC<NavbarProps> = () => {
                       </Link>
                     </div>
                   </div>
-                  <h2 className="my-4 w-full mx-auto text-primary">
-                    Welcome {viewer?.name}!
-                  </h2>
                   <nav className="flex flex-1 flex-col">
                     <ul role="list" className="flex flex-1 flex-col gap-y-7">
                       <li>

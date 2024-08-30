@@ -1,6 +1,5 @@
 import { auth } from "@/auth";
 import { ConvexClientProvider } from "../ConvexClientProvider";
-import { SignOut } from "@/components/SignOut";
 
 export default async function RSVPLayout({
   children,
@@ -14,7 +13,6 @@ export default async function RSVPLayout({
         <ConvexClientProvider session={session}>
           {children}
         </ConvexClientProvider>
-        <SignOut />
       </main>
     </>
   );

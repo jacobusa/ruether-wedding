@@ -1,14 +1,15 @@
 export const obfuscateEmail = (email: string) => {
-  // Split the email into two parts: before and after the '@' symbol
-  const [localPart, domain] = email.split("@");
+  const [username, domain] = email.split("@");
 
-  // Determine how many characters to obfuscate
-  const obfuscationLength = Math.max(localPart.length - 5, 0);
+  if (username.length <= 2) {
+    // If the username is 2 characters or less, return it without obfuscation
+    return email;
+  }
 
-  // Create the obfuscated local part
-  const obfuscatedLocalPart =
-    localPart.slice(0, 4) + "*".repeat(obfuscationLength);
+  const firstLetter = username[0];
+  const lastLetter = username[username.length - 1];
+  const obfuscatedMiddle = "*".repeat(username.length - 2);
 
-  // Recombine the obfuscated local part with the domain
-  return `${obfuscatedLocalPart}@${domain}`;
+  const obfuscatedUsername = `${firstLetter}${obfuscatedMiddle}${lastLetter}`;
+  return `${obfuscatedUsername}@${domain}`;
 };
