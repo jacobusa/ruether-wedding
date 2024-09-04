@@ -29,7 +29,7 @@ export const RSVPFormDataSchema = z.object({
   street: z.string().min(1, "Street is required"),
   city: z.string().min(1, "City is required"),
   zip: z.string().min(1, "Zip is required"),
-  mealSelection: z.enum(["Meat", "Fish", "Vegetarian"]),
+  mealSelection: z.enum(["Chicken", "Salmon", "Vegetarian"]),
   accomodation: z.string().optional(),
   accessabilityNeeds: z.string().optional(),
   dietaryRestrictions: z.string().optional(),
@@ -37,4 +37,11 @@ export const RSVPFormDataSchema = z.object({
   songRequest: z.string().optional(), // what song will get you on the dance floor
   marriageAdvice: z.string().optional(), // What is your best piece of marriage advice?
   cocktailSuggestion: z.string().optional(), // What signature cocktail should we serve on the day? (Provide 2 or 3 options for guests to cast their vote!)
+});
+
+export type UserInputsEdit = z.infer<typeof UserDataSchema>;
+export const UserDataSchema = z.object({
+  firstName: z.string().min(1, "First name is required."),
+  lastName: z.string().min(1, "Last name is required."),
+  email: z.string().min(1, "Email is required").email(),
 });

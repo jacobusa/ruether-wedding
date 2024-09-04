@@ -1,7 +1,6 @@
 "use client";
 /* eslint-disable @typescript-eslint/no-misused-promises */
 import { useQuery } from "convex/react";
-import { obfuscateEmail } from "@/utils/obfuscateEmail";
 import { api } from "@/convex/_generated/api";
 import { CheckIcon } from "../assets/CheckIcon";
 import { sendRSVPLink } from "@/server/actions";
@@ -32,7 +31,7 @@ export const ListUsersRSVP: FC<ListUsersRSVPProps> = ({ name }) => {
                         <CheckIcon />
                       </div>
                       <span className="my-auto text-xs  text-secondary ">
-                        RSVP Sent to: {obfuscateEmail(user.email)}
+                        RSVP Sent to: {user.email}
                       </span>
                     </div>
                   ) : (

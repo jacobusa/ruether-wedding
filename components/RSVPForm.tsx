@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { RSVPFormDataSchema, RSVPInputs, RSVPInputsEdit } from "@/lib/schema";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -56,8 +56,13 @@ interface RSVPFormProps {
 export const RSVPForm: FC<RSVPFormProps> = ({ rsvp }) => {
   const [previousStep, setPreviousStep] = useState(0);
   const [currentStep, setCurrentStep] = useState(0);
-  const [hasPlusOne, setHasPlusOne] = useState(rsvp?.hasPlusOne ?? false);
+  const [hasPlusOne, setHasPlusOne] = useState(false);
   const delta = currentStep - previousStep;
+
+  useEffect(() => {
+    if (!rsvp) return;
+    setHasPlusOne(rsvp.hasPlusOne);
+  }, [rsvp]);
 
   const {
     register,
@@ -72,8 +77,6 @@ export const RSVPForm: FC<RSVPFormProps> = ({ rsvp }) => {
   const addRSVP = useMutation(api.rsvp.addRSVP);
   const updateRSVP = useMutation(api.rsvp.updateRSVP);
   const processForm: SubmitHandler<RSVPInputs> = async (data) => {
-    if (rsvp?._id) {
-    }
     try {
       if (rsvp?._id) {
         await updateRSVP({

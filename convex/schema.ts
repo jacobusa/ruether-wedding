@@ -88,8 +88,8 @@ export const rsvpSchema = {
   city: v.string(),
   zip: v.string(),
   mealSelection: v.union(
-    v.literal("Meat"),
-    v.literal("Fish"),
+    v.literal("Chicken"),
+    v.literal("Salmon"),
     v.literal("Vegetarian")
   ),
   accomodation: v.optional(v.string()),

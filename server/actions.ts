@@ -14,7 +14,7 @@ export async function sendRSVPLink(formData: FormData) {
   });
   const form = Object.fromEntries(formData);
   const data = sendRSVPLinkSchema.parse(form);
-  const user = await fetchQuery(api.users.getUserById, {
+  const user = await fetchQuery(api.users.getUserByIdPublic, {
     id: data.id as Id<"users">,
   });
   if (!user?.email) return;

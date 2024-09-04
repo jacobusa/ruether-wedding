@@ -23,7 +23,7 @@ export const OurStory: React.FC = () => {
           romance and made it last. They both share a house in Calgary and are
           the proud servants of two furry overlords.
         </p>
-        <div className="mt-10 self-center w-full flex flex-col md:flex-row  max-w-[1000px]">
+        <div className="mt-10 self-center w-full flex flex-col md:flex-row  max-w-[1300px]">
           <div className="mb-4">
             <h5 className="text-secondary font-brush lg:whitespace-nowrap text-2xl md:text-6xl mb-7">
               Cecile Badenhorst
@@ -54,7 +54,7 @@ export const OurStory: React.FC = () => {
             <Image
               alt="Cecile and kurt oval photo"
               src={ovalImage}
-              className="w-[400px] h-fit my-auto shrink-0"
+              className="w-[500px] h-fit my-auto shrink-0"
             />
           </div>
           <div className="md:mt-32">

@@ -7,5 +7,5 @@ export default auth((request) => {
 });
 
 export const config = {
-  matcher: ["/(rsvp.*)"],
+  matcher: ["/(rsvp.*)", "/(users.*)"],
 };

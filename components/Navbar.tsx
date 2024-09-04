@@ -17,6 +17,9 @@ import { FaLongArrowAltLeft } from "react-icons/fa";
 import { IoFlowerOutline } from "react-icons/io5";
 import { usePathname } from "next/navigation";
 import { CiMail } from "react-icons/ci";
+import { FaUser } from "react-icons/fa";
+import { api } from "@/convex/_generated/api";
+import { useQuery } from "convex/react";
 
 const navigation = [
   { name: "RSVP Form", href: "/rsvp", icon: IoFlowerOutline },
@@ -27,6 +30,7 @@ interface NavbarProps {}
 export const Navbar: FC<NavbarProps> = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const pathname = usePathname();
+  const { viewer } = useQuery(api.users.getViewerInfo) ?? {};
   return (
     <>
       <nav className="fixed top-0 z-50">
@@ -94,6 +98,26 @@ export const Navbar: FC<NavbarProps> = () => {
                               </Link>
                             </li>
                           ))}
+
+                          {viewer?.admin && (
+                            <li key={"users"}>
+                              <Link
+                                href={"/users"}
+                                className={classNames(
+                                  pathname.includes("'/users")
+                                    ? "bg-primary text-white"
+                                    : "text-gray-800 hover:bg-primary hover:text-white",
+                                  "group flex gap-x-3 rounded-sm p-2 text-sm font-semibold leading-6"
+                                )}
+                              >
+                                <FaUser
+                                  aria-hidden="true"
+                                  className="h-6 w-6 shrink-0"
+                                />
+                                Users
+                              </Link>
+                            </li>
+                          )}
                         </ul>
                       </li>
 
