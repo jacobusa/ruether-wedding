@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import * as React from "react";
 import cecileImage from "../public/images/cecile.png";
 import kurtImage from "../public/images/kurt.png";
@@ -5,19 +6,19 @@ import Image from "next/image";
 
 interface WeddingPartyProps {}
 
-export const WeddingParty: React.FC<WeddingPartyProps> = ({}) => {
+export const WeddingParty: React.FC<WeddingPartyProps> = () => {
   return (
     <section className="antialiased  bg-gray-100 text-gray-800 flex flex-col">
       <h5 className="font-brush mx-auto text-secondary text-5xl sm:text-7xl mb-4">
         Wedding Party
       </h5>
-      <div className="container mx-auto mt-8 max-w-[1000px] px-6 flex">
-        <div className="flex-grow flex flex-col">
+      <div className="container mx-auto space-x-4 mt-8 max-w-[1000px] px-6 flex">
+        <div className="flex-grow space-y-4 flex flex-col">
           <div className="mx-auto relative">
             <Image
               alt="cecile"
               src={cecileImage}
-              className="rounded-full"
+              className="rounded-full grayscale"
               height={400}
               width={300}
             />
@@ -25,14 +26,84 @@ export const WeddingParty: React.FC<WeddingPartyProps> = ({}) => {
               Cecile
             </p>
           </div>
-          <p className="font-medium text-gray-600 text-xl text-center">
-            Nicci (Bridesmaid)
-          </p>
-          <p className="font-medium text-gray-600 text-xl text-center">
-            Jasmine
-          </p>
+          <div className="flex mx-auto justify-center flex-col max-w-[150px] sm:max-w-[250px]">
+            <img
+              src="https://placehold.co/400x400"
+              alt="bridesmaid"
+              className="rounded-full "
+            />
+            <span className="text-gray-600 text-sm mx-auto ">Bridesmaid</span>
+            <p className="font-medium text-gray-600 text-xl text-center">
+              Nicci
+            </p>
+          </div>
+          <div className="flex mx-auto justify-center flex-col max-w-[150px] sm:max-w-[250px]">
+            <img
+              src="https://placehold.co/400x400"
+              alt="bridesmaid"
+              className="rounded-full "
+            />
+            <p className="font-medium text-gray-600 text-xl text-center">
+              Jasmine
+            </p>
+          </div>
+          <div className="flex mx-auto justify-center flex-col max-w-[150px] sm:max-w-[250px]">
+            <img
+              src="https://placehold.co/400x400"
+              alt="bridesmaid"
+              className="rounded-full "
+            />
+            <p className="font-medium text-gray-600 text-xl text-center">
+              Kobus
+            </p>
+          </div>
         </div>
-        <div className="flex-grow flex flex-col">
+        <div className="flex-grow space-y-4 flex flex-col">
+          <div className="mx-auto relative">
+            <Image
+              alt="kurt"
+              src={kurtImage}
+              className="rounded-full"
+              height={400}
+              width={300}
+            />
+            <p className="font-medium font-brush text-gray-600 my-4 text-4xl text-center">
+              Kurt
+            </p>
+          </div>
+          <div className="flex mx-auto justify-center flex-col max-w-[150px] sm:max-w-[250px]">
+            <img
+              src="https://placehold.co/400x400"
+              alt="bridesmaid"
+              className="rounded-full "
+            />
+            <span className="text-gray-600 text-sm mx-auto ">Best Man</span>
+            <p className="font-medium text-gray-600 text-xl text-center">
+              Teagan
+            </p>
+          </div>
+          <div className="flex mx-auto justify-center flex-col max-w-[150px] sm:max-w-[250px]">
+            <img
+              src="https://placehold.co/400x400"
+              alt="bridesmaid"
+              className="rounded-full "
+            />
+            <p className="font-medium text-gray-600 text-xl text-center">
+              Dean
+            </p>
+          </div>
+          <div className="flex mx-auto justify-center flex-col max-w-[150px] sm:max-w-[250px]">
+            <img
+              src="https://placehold.co/400x400"
+              alt="bridesmaid"
+              className="rounded-full "
+            />
+            <p className="font-medium text-gray-600 text-xl text-center">
+              Frans
+            </p>
+          </div>
+        </div>
+        {/* <div className="flex-grow flex flex-col">
           <div className="mx-auto relative">
             <Image
               alt="kurt"
@@ -49,7 +120,7 @@ export const WeddingParty: React.FC<WeddingPartyProps> = ({}) => {
             Teagan (Best man)
           </p>
           <p className="font-medium text-gray-600 text-xl text-center">Frans</p>
-        </div>
+        </div> */}
       </div>
     </section>
   );

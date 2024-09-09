@@ -25,12 +25,14 @@ export const Timeline: FC = () => {
           <div className="timeline-container">
             <div aria-hidden={true} className="timeline-pointer"></div>
             <div className="bg-white p-6 rounded-md shadow-md">
-              <strong className="text-gray-500">10:00 am</strong>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam
-                commodi molestias fugit facere eos doloremque rem enim ab
-                quaerat quidem error, dolore est autem explicabo eveniet officia
-                eum blanditiis nobis.
+              <strong className="text-gray-500">3:30 pm</strong>
+              <p className="text-gray-500 text-xl font-medium my-2">
+                Guests Gather and Find Their Seats
+              </p>
+              <p className="text-sm">
+                Please arrive by this time to find your seats and get
+                comfortable. Take a moment to relax and enjoy the beautiful
+                surroundings as we prepare to celebrate this special day.
               </p>
             </div>
           </div>
@@ -49,12 +51,15 @@ export const Timeline: FC = () => {
               className="timeline-pointer timeline-pointer-left"
             ></div>
             <div className="bg-white p-6 rounded-md shadow-md">
-              <strong className="text-gray-500">3:00 am</strong>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam
-                commodi molestias fugit facere eos doloremque rem enim ab
-                quaerat quidem error, dolore est autem explicabo eveniet officia
-                eum blanditiis nobis.
+              <strong className="text-gray-500">4:00 pm</strong>
+              <p className="text-gray-500 text-xl font-medium my-2">
+                Wedding Ceremony
+              </p>
+              <p className="text-sm">
+                The ceremony will begin promptly at 4:00 PM. Join us as we
+                witness the exchange of vows and celebrate the union of the
+                happy couple. Please be sure to turn off or silence your phones
+                during the ceremony.
               </p>
             </div>
           </div>
@@ -70,12 +75,14 @@ export const Timeline: FC = () => {
           <div className="timeline-container">
             <div aria-hidden={true} className="timeline-pointer"></div>
             <div className="bg-white p-6 rounded-md shadow-md">
-              <strong className="text-gray-500">3:00 am</strong>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam
-                commodi molestias fugit facere eos doloremque rem enim ab
-                quaerat quidem error, dolore est autem explicabo eveniet officia
-                eum blanditiis nobis.
+              <strong className="text-gray-500">4:30 pm</strong>
+              <p className="text-gray-500 text-xl font-medium my-2">
+                Cocktails
+              </p>
+              <p className="text-sm">
+                Following the ceremony, enjoy a selection of cocktails. This is
+                a great opportunity to mingle with other guests, congratulate
+                the newlyweds, and pose for some pictures.
               </p>
             </div>
           </div>
@@ -94,12 +101,15 @@ export const Timeline: FC = () => {
               className="timeline-pointer timeline-pointer-left "
             ></div>
             <div className="bg-white p-6 rounded-md shadow-md">
-              <strong className="text-gray-500">3:00 am</strong>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam
-                commodi molestias fugit facere eos doloremque rem enim ab
-                quaerat quidem error, dolore est autem explicabo eveniet officia
-                eum blanditiis nobis.
+              <strong className="text-gray-500">5:30 pm</strong>
+              <p className="text-gray-500 text-xl font-medium my-2">
+                Dinner and Reception
+              </p>
+              <p className="text-sm">
+                The dinner and reception will start at 5:30 PM. Join us in
+                celebrating with a delicious meal, heartfelt toasts, and
+                dancing. The evening will be filled with joy, laughter, and
+                plenty of fun on the dance floor!
               </p>
             </div>
           </div>

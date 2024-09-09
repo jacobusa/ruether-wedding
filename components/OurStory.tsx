@@ -12,10 +12,10 @@ export const OurStory: React.FC = () => {
           className="w-48  self-center"
           src={flowerImage}
         />
-        <h4 className="md:text-6xl font-brush text-secondary font-light text-center">
+        <h4 className="text-4xl md:text-6xl font-brush text-secondary font-light text-center">
           Our Story
         </h4>
-        <p className="max-w-[700px] text-gray-600 text-center  font-light py-4 self-center text-sm md:text-base tracking-wide">
+        <p className="max-w-[700px] text-gray-600 text-center  font-light py-4 self-center text-sm  tracking-wide">
           Kurt and Cecile met through Cecile’s brother Frans while growing up in
           Red Deer. They dated in High school before going their separate ways.
           Cecile went off to University and Kurt pursued his career in
@@ -25,7 +25,7 @@ export const OurStory: React.FC = () => {
         </p>
         <div className="mt-10 self-center w-full flex flex-col md:flex-row  max-w-[1300px]">
           <div className="mb-4">
-            <h5 className="text-secondary font-brush lg:whitespace-nowrap text-2xl md:text-6xl mb-7">
+            <h5 className="text-secondary font-brush lg:whitespace-nowrap text-4xl md:text-6xl mb-7">
               Cecile Badenhorst
             </h5>
             <p className="text-gray-600 max-w-[1200px]  font-light text-sm tracking-wide md:text-right">
@@ -50,7 +50,7 @@ export const OurStory: React.FC = () => {
               by whiskered dictators.
             </p>
           </div>
-          <div className="flex justify-center mx-8 content-center w-full">
+          <div className="flex justify-center mx-auto content-center w-full min-w-[300px] max-w-[400px]">
             <Image
               alt="Cecile and kurt oval photo"
               src={ovalImage}

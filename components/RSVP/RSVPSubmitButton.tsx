@@ -11,6 +11,7 @@ export const RSVPSubmitButtom = () => {
         label="Send RSVP Link"
         variant="primary"
         type="submit"
+        className="!h-full"
         aria-disabled={pending}
         disabled={pending}
       />

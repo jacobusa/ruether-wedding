@@ -69,7 +69,7 @@ export const Countdown: React.FC = () => {
         />
         <div id="overlay" className="bg-black/40 absolute inset-0 z-0"></div>
       </motion.div>
-      <h4 className="absolute inset-0 top-28 font-brush text-tertiary text-6xl sm:text-7xl flex justify-center">
+      <h4 className="absolute inset-0 top-28 font-brush text-tertiary text-4xl sm:text-7xl flex justify-center">
         We Can&#39;t Wait
       </h4>
       <ul className="w-full absolute inset-0 top-[40%] flex  text-tertiary place-content-center  gap-5 mx-auto ">

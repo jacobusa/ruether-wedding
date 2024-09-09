@@ -126,7 +126,7 @@ export const RSVPForm: FC<RSVPFormProps> = ({ rsvp }) => {
   };
 
   return (
-    <section className="w-full max-w-4xl mx-auto inset-0 min-h-max flex flex-col justify-between p-24">
+    <section className="w-full max-w-4xl mx-auto inset-0 min-h-max flex flex-col justify-between p-4 md:p-24">
       <h1 className="tracking-widest self-center mb-10 font-bold text-secondary text-[10vw] lg:text-5xl font-brush">
         RSVP
       </h1>
@@ -520,8 +520,8 @@ export const RSVPForm: FC<RSVPFormProps> = ({ rsvp }) => {
                     {...register("mealSelection")}
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-primary sm:max-w-xs sm:text-sm sm:leading-6"
                   >
-                    <option>Meat</option>
-                    <option>Fish</option>
+                    <option>Chicken</option>
+                    <option>Salmon</option>
                     <option>Vegetarian</option>
                   </select>
                   {errors.mealSelection?.message && (

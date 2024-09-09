@@ -11,10 +11,10 @@ export const RSVP = () => {
   const [name, setName] = useState<string | undefined>(undefined);
   return (
     <section id="rsvp" className="pt-40 z-10 bg-gray-100 relative">
-      <div className="flex">
-        <div className="basis-7/12 my-20 relative h-[40vh] overflow-hidden">
-          <div className="absolute max-w-[50%] top-[40%] left-[30%] z-10">
-            <h1 className=" text-4xl  text-gray-200 tracking-wider font-light">
+      <div className="flex flex-col md:flex-row">
+        <div className="sm:basis-7/12 sm:my-20 relative h-[70vh] sm:h-[40vh] overflow-hidden">
+          <div className="absolute  top-[30%] sm:left-[30%] left-[10%]  z-10">
+            <h1 className=" text-3xl sm:text-4xl   text-gray-200 tracking-wider font-light">
               Find Your Reservation
             </h1>
             {/* <p className="text-gray-200 text-sm mt-6 tracking-wider leading-5 font-light">
@@ -23,22 +23,28 @@ export const RSVP = () => {
               esse.
             </p> */}
           </div>
-          <Image
-            src={kurtAndCecile}
-            alt="Kurt and cecile in italy"
-            className="transition-all  sm:-translate-y-[400px] lg:-translate-y-[500px] xl:-translate-y-[600px]"
-            sizes="100%"
-          />
-          <div id="overlay" className="bg-black/40 absolute inset-0 z-0"></div>
+          <div className="relative">
+            <Image
+              src={kurtAndCecile}
+              alt="Kurt and cecile in italy"
+              className="transition-all lg:-translate-y-[500px] "
+              sizes="100%"
+            />
+            <div
+              id="overlay"
+              className="bg-black/40 absolute inset-0 z-0"
+            ></div>
+          </div>
         </div>
-        <div className="basis-5/12   relative border-2 border-primary max-w-md  self-center bg-white">
+        <div className="sm:basis-5/12 relative border-2 border-primary w-[95%] max-w-[450px]  mx-auto -translate-y-44 md:translate-y-0 md:mx-0">
           <Image
             src={blueMarbleImage}
-            className="absolute -translate-y-56 -z-10 top-[30%] left-[50%]"
+            className="absolute  -translate-y-56 -z-10 top-[30%] left-[50%]"
             alt="white flower"
             sizes="100%"
+            style={{ zIndex: 0 }}
           />
-          <div className="shadow-2xl min-h-[400px]  relative z-10 p-10 flex justify-center  space-y-4 flex-col shadow-primary ring-gray-900/5 h-full  md:col-span-2">
+          <div className="shadow-2xl min-h-[400px]  relative z-40 p-3 sm:p-10 flex justify-center  space-y-4 flex-col shadow-primary bg-white ring-gray-900/5 h-full  md:col-span-2">
             <form
               onSubmit={(e) => {
                 e.preventDefault();

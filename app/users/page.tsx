@@ -21,7 +21,7 @@ export default function UsersHome() {
   return (
     <>
       <Navbar />
-      <section className="w-full max-w-7xlmx-auto inset-0 min-h-max flex flex-col justify-between p-24">
+      <section className="w-full max-w-7xl mx-auto inset-0 min-h-max flex flex-col justify-between p-4 md:p-24">
         <h1 className="tracking-widest self-center mb-10 font-bold text-secondary text-[10vw] lg:text-5xl font-brush">
           Users
         </h1>
