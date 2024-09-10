@@ -1,22 +1,22 @@
 import { resend } from "@/lib/resend";
-import RSVPMagicLinkEmail from "@/emails/rsvp-magic-link";
 
 export const sendVerificationRequest: (params: any) => any = async (params) => {
   const { identifier, url, provider, theme } = params;
   const { host } = new URL(url);
-
   try {
     const data = await resend.emails.send({
       from: "Ruether Wedding <RSVP@ruetherwedding.com>",
       to: [identifier],
-      subject: `RSVP Link to ${host}`,
+      subject: `RSVP Link`,
       text: text({ url, host }),
-      // react: RSVPMagicLinkEmail({ url, host } as any),
+      // react: RSVPMagicLinkEmail({ url, host } as any), // can't do this in edge environment
       html: getHTML({ host, url }),
     });
     return { success: true, data };
   } catch (error) {
-    throw new Error("Failed to send the verification Email.");
+    console.error(error);
+    // throw new Error("Failed to send the verification Email.");
+    return { redirect: `${url}/error` };
   }
 };
 
@@ -26,17 +26,6 @@ const text: (params: any) => any = ({ url, host }) => {
 
 const getHTML = ({ host, url }: { host: string; url: string }) => {
   return `
-  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html dir="ltr" lang="en">
-
-  <head>
-    <link rel="preload" as="image" href="https://ruetherwedding.com/images/gallery/5.jpg" />
-    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
-    <meta name="x-apple-disable-message-reformatting" />
-  </head>
-  <div style="display:none;overflow:hidden;line-height:1px;opacity:0;max-height:0;max-width:0">Here is your RSVP Link.<div> </div>
-
-  <body style="background-color:#ffffff;font-family:-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,Roboto,Oxygen-Sans,Ubuntu,Cantarell,&quot;Helvetica Neue&quot;,sans-serif">
     <table align="center" width="100%" border="0" cellPadding="0" cellSpacing="0" role="presentation" style="max-width:37.5em;margin:0 auto;padding:20px 25px 48px;background-position:bottom;background-repeat:no-repeat, no-repeat">
       <tbody>
         <tr style="width:100%">
@@ -46,7 +35,7 @@ const getHTML = ({ host, url }: { host: string; url: string }) => {
               <tbody>
                 <tr>
                   <td>
-                    <p style="font-size:16px;line-height:26px;margin:16px 0"><a href="${host}${url}" style="color:#fff;text-decoration:none;font-size:14px;background-color:#bf896b;line-height:1.5;border-radius:0.4em;padding:12px 24px" target="_blank">Complete your RSVP</a></p>
+                    <p style="font-size:16px;line-height:26px;margin:16px 0"><a href="${host}${url}" style="color:#fff;text-decoration:none;font-size:14px;background-color:#8ec2ce;line-height:1.5;border-radius:0.4em;padding:12px 24px" target="_blank">Complete your RSVP</a></p>
                     <p style="font-size:16px;line-height:26px;margin:16px 0">If you didn&#x27;t request this, please ignore this email.</p>
                   </td>
                 </tr>
@@ -59,8 +48,5 @@ const getHTML = ({ host, url }: { host: string; url: string }) => {
         </tr>
       </tbody>
     </table>
-  </body>
-
-</html>
   `;
 };
