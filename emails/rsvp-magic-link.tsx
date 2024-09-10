@@ -22,7 +22,7 @@ const baseUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
   : "https://ruetherwedding.com";
 
-export const RSVPMagicLinkEmail = ({ url, host }: RSVPMagicLinkEmailProps) => (
+const RSVPMagicLinkEmail = ({ url, host }: RSVPMagicLinkEmailProps) => (
   <Html>
     <Head />
     <Preview>Here is your RSVP Link.</Preview>

@@ -1,9 +1,9 @@
 import { resend } from "@/lib/resend";
-
 export const sendVerificationRequest: (params: any) => any = async (params) => {
   const { identifier, url, provider, theme } = params;
   const { host } = new URL(url);
   try {
+    // const html = await getMagicLinkHTML({ host, url });
     const data = await resend.emails.send({
       from: "Ruether Wedding <RSVP@ruetherwedding.com>",
       to: [identifier],
@@ -25,8 +25,6 @@ const text: (params: any) => any = ({ url, host }) => {
 };
 
 const getHTML = ({ host, url }: { host: string; url: string }) => {
-  console.log("url", url);
-  console.log("host", host);
   return `
     <table align="center" width="100%" border="0" cellPadding="0" cellSpacing="0" role="presentation" style="max-width:37.5em;margin:0 auto;padding:20px 25px 48px;background-position:bottom;background-repeat:no-repeat, no-repeat">
       <tbody>
@@ -39,6 +37,7 @@ const getHTML = ({ host, url }: { host: string; url: string }) => {
                   <td>
                     <p style="font-size:16px;line-height:26px;margin:16px 0"><a href="${host}${url}" style="color:#fff;text-decoration:none;font-size:14px;background-color:#8ec2ce;line-height:1.5;border-radius:0.4em;padding:12px 24px" target="_blank">Complete your RSVP</a></p>
                     <p style="font-size:16px;line-height:26px;margin:16px 0">If you didn&#x27;t request this, please ignore this email.</p>
+                    <p>${url}</p>
                   </td>
                 </tr>
               </tbody>
