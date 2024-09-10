@@ -1,16 +1,19 @@
 import { resend } from "@/lib/resend";
+
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+
 export const sendVerificationRequest: (params: any) => any = async (params) => {
   const { identifier, url, provider, theme } = params;
-  const { host } = new URL(url);
+  const { pathname } = new URL(url);
   try {
     // const html = await getMagicLinkHTML({ host, url });
     const data = await resend.emails.send({
       from: "Ruether Wedding <RSVP@ruetherwedding.com>",
       to: [identifier],
       subject: `RSVP Link`,
-      text: text({ url, host }),
+      text: text({ pathname }),
       // react: RSVPMagicLinkEmail({ url, host } as any), // can't do this in edge environment
-      html: getHTML({ host, url }),
+      html: getHTML({ pathname }),
     });
     return { success: true, data };
   } catch (error) {
@@ -20,11 +23,11 @@ export const sendVerificationRequest: (params: any) => any = async (params) => {
   }
 };
 
-const text: (params: any) => any = ({ url, host }) => {
-  return `RSVP Link to ${host}\n${url}\n\n`;
+const text: (params: any) => any = ({ pathname }) => {
+  return `RSVP Link to ${baseUrl}\n${pathname}\n\n`;
 };
 
-const getHTML = ({ host, url }: { host: string; url: string }) => {
+const getHTML = ({ pathname }: { pathname: string }) => {
   return `
     <table align="center" width="100%" border="0" cellPadding="0" cellSpacing="0" role="presentation" style="max-width:37.5em;margin:0 auto;padding:20px 25px 48px;background-position:bottom;background-repeat:no-repeat, no-repeat">
       <tbody>
@@ -35,9 +38,9 @@ const getHTML = ({ host, url }: { host: string; url: string }) => {
               <tbody>
                 <tr>
                   <td>
-                    <p style="font-size:16px;line-height:26px;margin:16px 0"><a href="${host}${url}" style="color:#fff;text-decoration:none;font-size:14px;background-color:#8ec2ce;line-height:1.5;border-radius:0.4em;padding:12px 24px" target="_blank">Complete your RSVP</a></p>
+                    <p style="font-size:16px;line-height:26px;margin:16px 0"><a href="${baseUrl}/${pathname}" style="color:#fff;text-decoration:none;font-size:14px;background-color:#8ec2ce;line-height:1.5;border-radius:0.4em;padding:12px 24px" target="_blank">Complete your RSVP</a></p>
                     <p style="font-size:16px;line-height:26px;margin:16px 0">If you didn&#x27;t request this, please ignore this email.</p>
-                    <p>${url}</p>
+                    <p>${pathname}</p>
                   </td>
                 </tr>
               </tbody>
