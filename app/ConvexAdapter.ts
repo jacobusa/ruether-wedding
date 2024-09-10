@@ -11,7 +11,11 @@ import { FunctionArgs, FunctionReference } from "convex/server";
 import { api } from "../convex/_generated/api";
 import { Doc, Id } from "../convex/_generated/dataModel";
 
-type User = AdapterUser & { id: Id<"users"> };
+type User = AdapterUser & {
+  id: Id<"users">;
+  firstName: string;
+  lastName: string;
+};
 type Session = AdapterSession & { userId: Id<"users"> };
 type Account = AdapterAccount & { userId: Id<"users"> };
 type Authenticator = AdapterAuthenticator & { userId: Id<"users"> };

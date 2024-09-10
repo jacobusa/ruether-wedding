@@ -9,8 +9,8 @@ export const Registry: React.FC = () => {
         <p className="max-w-[700px] text-gray-500 text-center  font-light py-4 self-center text-sm md:text-base tracking-wide">
           The most important thing to us is that you&apos;re able to come and
           celebrate our wedding. However, if you wish to give a gift, we would
-          graciously accept a contribution towards our new lives in the form of
-          e-transfer.
+          graciously accept a contribution to our honeymoon would be sincerely
+          appreciated.
           <br />
           <br />
           Thank you for your love and support!

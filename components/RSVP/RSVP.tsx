@@ -36,7 +36,7 @@ export const RSVP = () => {
             ></div>
           </div>
         </div>
-        <div className="sm:basis-5/12 relative border-2 border-primary w-[95%] max-w-[450px]  mx-auto -translate-y-44 md:translate-y-0 md:mx-0">
+        <div className="md:basis-5/12 relative border-2 h-[450px] border-primary w-[95%] max-w-[450px]  mx-auto -translate-y-44 md:translate-y-8 md:mx-0">
           <Image
             src={blueMarbleImage}
             className="absolute  -translate-y-56 -z-10 top-[30%] left-[50%]"
@@ -44,7 +44,7 @@ export const RSVP = () => {
             sizes="100%"
             style={{ zIndex: 0 }}
           />
-          <div className="shadow-2xl min-h-[400px]  relative z-40 p-3 sm:p-10 flex justify-center  space-y-4 flex-col shadow-primary bg-white ring-gray-900/5 h-full  md:col-span-2">
+          <div className="shadow-2xl  relative z-40 p-3 sm:px-10 flex justify-center  space-y-4 flex-col shadow-primary bg-white ring-gray-900/5 h-full  md:col-span-2">
             <form
               onSubmit={(e) => {
                 e.preventDefault();
@@ -54,7 +54,7 @@ export const RSVP = () => {
                   setName(formName.name as string);
                 }
               }}
-              className="relative z-10 flex justify-center  space-y-4 flex-col shadow-primary ring-gray-900/5 h-full  md:col-span-2"
+              className="relative z-10 flex justify-center  space-y-4 flex-col shadow-primary ring-gray-900/5   md:col-span-2"
             >
               <label
                 htmlFor="name"
