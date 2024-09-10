@@ -5,5 +5,6 @@ export const getHTML = async () => {
   const html = await render(<RSVPMagicLinkEmail url="asdfasdf" host="asdf" />, {
     pretty: true,
   });
+
   console.log(html);
 };
