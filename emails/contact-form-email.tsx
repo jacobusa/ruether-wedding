@@ -32,7 +32,7 @@ export const ContactFormEmail = ({
     <Body style={main}>
       <Container style={container}>
         <Img
-          src={`${baseUrl}/images/white-flower.png`}
+          src={`${baseUrl}/images/blue-marble.png`}
           width="100"
           height="100"
           alt="Github"

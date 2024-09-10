@@ -3,7 +3,7 @@ import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
 
 export const Quote: React.FC = () => {
   return (
-    <section className="bg-gray-50 h-[70vh] ">
+    <section className="bg-gray-50 pb-40 sm:pb-0 ">
       <div className="h-40" />
       <div className="bg-[#f3f0ed] py-4">
         <div className="translate-y-20 flex justify-center content-center flex-col max-w-[500px] mx-auto items-center text-center border px-4 py-5 border-primary">
