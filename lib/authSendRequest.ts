@@ -25,12 +25,14 @@ const text: (params: any) => any = ({ url, host }) => {
 };
 
 const getHTML = ({ host, url }: { host: string; url: string }) => {
+  console.log("url", url);
+  console.log("host", host);
   return `
     <table align="center" width="100%" border="0" cellPadding="0" cellSpacing="0" role="presentation" style="max-width:37.5em;margin:0 auto;padding:20px 25px 48px;background-position:bottom;background-repeat:no-repeat, no-repeat">
       <tbody>
         <tr style="width:100%">
           <td><img alt="Kurt and Cecile" height="200" src="https://ruetherwedding.com/images/gallery/5.jpg" style="display:block;outline:none;border:none;text-decoration:none" width="300" />
-            <h1 style="font-size:28px;font-weight:bold;margin-top:48px">💍 Your RSVP link to ${host}</h1>
+            <h1 style="font-size:28px;font-weight:bold;margin-top:48px">💍 Your RSVP link is below</h1>
             <table align="center" width="100%" border="0" cellPadding="0" cellSpacing="0" role="presentation" style="margin:24px 0">
               <tbody>
                 <tr>
