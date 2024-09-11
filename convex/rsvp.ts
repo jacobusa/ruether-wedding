@@ -45,8 +45,17 @@ export const updateRSVP = mutation({
     if (viewerId === null) {
       throw new ConvexError("User is not authenticated");
     }
+    const plusOneData = data.hasPlusOne
+      ? {}
+      : {
+          plusOneFirstName: undefined,
+          plusOneLastName: undefined,
+          plusOneEmail: undefined,
+          plusOneMealPreference: undefined,
+        };
     const rsvpId = await ctx.db.patch(id, {
       ...data,
+      ...plusOneData,
       userId: viewerId,
     });
     return rsvpId;

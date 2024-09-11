@@ -31,23 +31,22 @@ export const OurStory: React.FC = () => {
             <p className="text-gray-600 max-w-[1200px]  font-light text-sm tracking-wide md:text-right">
               Born in the wilds of South Africa, Cecile was whisked away to the
               frozen tundra of Canada at the tender age of seven. Armed with a
-              bilingual tongue that can switch between Afrikaans and English,
-              they&#39;ve mastered the art of confusing the heck out of people.
-              She is a self-described nerd and will find a fascination with the
-              weirdest things possible. As a researcher stationed at the
-              University of Calgary, she&#39;s boldly declared war on
-              Parkinson’s disease, armed with determination and a hefty dose of
-              caffeine. In between Cecile’s busy schedule she finds solace in
-              the soothing world of gardening. And is particularly fond of
-              aquaponics experiments. Guilty pleasures include enjoys indulging
-              their inner nerd with murder documentaries and reality TV. Their
-              dark sense of humor has been known to raise eyebrows and elicit
-              nervous laughter, but hey, life&#39;s too short not to laugh at
-              the absurdity of it all. Cecile has admittedly become a bit of a
-              crazy cat lady with dreams of amassing a feline army that would
-              make even the ancient Egyptians jealous. Kurt, on the other hand,
-              is less enthused about the prospect of living in a house overrun
-              by whiskered dictators.
+              bilingual tongue, effortlessly switching between Afrikaans and
+              English, she has mastered the art of discreetly swearing at people
+              with a smile. A self-described nerd, Cecile finds fascination in
+              the most unusual things. As a researcher stationed at the
+              University of Calgary, she has boldly declared war on Parkinson’s
+              disease, aided by a crippling caffeine addiction. Despite her busy
+              schedule, Cecile finds solace in gardening, particularly
+              aquaponics experiments. Her guilty pleasures include dramatic
+              reality shows—like the lives of rich housewives—and true crime. As
+              sweet as she may seem, she has a dark sense of humor that often
+              raises eyebrows and elicits nervous laughter. Cecile’s most
+              important and cherished role is that of a crazy cat lady. One of
+              her notable ambitions is to amass a feline army that would make
+              even the ancient Egyptians jealous. Kurt, however, is less
+              enthusiastic about the idea of living in a house overrun by
+              whiskered dictators.
             </p>
           </div>
           <div className="flex justify-center mx-auto content-center w-full min-w-[300px] max-w-[400px]">

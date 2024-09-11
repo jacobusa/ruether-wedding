@@ -92,6 +92,9 @@ export const rsvpSchema = {
     v.literal("Salmon"),
     v.literal("Vegetarian")
   ),
+  plusOneMealSelection: v.optional(
+    v.union(v.literal("Chicken"), v.literal("Salmon"), v.literal("Vegetarian"))
+  ),
   accomodation: v.optional(v.string()),
   accessabilityNeeds: v.optional(v.string()),
   dietaryRestrictions: v.optional(v.string()),

@@ -8,12 +8,19 @@ export const Registry: React.FC = () => {
         </h4>
         <p className="max-w-[700px] text-gray-500 text-center  font-light py-4 self-center text-sm md:text-base tracking-wide">
           The most important thing to us is that you&apos;re able to come and
-          celebrate our wedding. However, if you wish to give a gift, we would
-          graciously accept a contribution to our honeymoon would be sincerely
-          appreciated.
+          celebrate our wedding. We are incredibly grateful for your love and
+          support as we begin this new chapter of our lives together. If you
+          would like to honor us with a gift, we kindly request cash or an
+          e-transfer, as it will help us start our journey in the most
+          meaningful way. This flexibility will allow us to put your generous
+          contribution towards our future adventures and experiences. Please
+          message either Kurt or Cecile for e-transfer information.
           <br />
           <br />
-          Thank you for your love and support!
+          Thank you for making our day even more special!
+          <br />
+          <br />
+          Love Kurt and Cecile
         </p>
         {/* <div className="mt-10 self-center w-full flex flex-col md:flex-row space-x-24  max-w-[1000px]">
           <div className="mb-4">

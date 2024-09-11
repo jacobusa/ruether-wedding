@@ -531,6 +531,32 @@ export const RSVPForm: FC<RSVPFormProps> = ({ rsvp }) => {
                   )}
                 </div>
               </div>
+              {hasPlusOne && (
+                <div className="sm:col-span-full">
+                  <label
+                    htmlFor="plusOneMealSelection"
+                    className="block text-sm font-medium leading-6 text-gray-900"
+                  >
+                    Plus One Meal Selection
+                  </label>
+                  <div className="mt-2">
+                    <select
+                      id="plusOneMealSelection"
+                      {...register("plusOneMealSelection")}
+                      className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-primary sm:max-w-xs sm:text-sm sm:leading-6"
+                    >
+                      <option>Chicken</option>
+                      <option>Salmon</option>
+                      <option>Vegetarian</option>
+                    </select>
+                    {errors.plusOneMealSelection?.message && (
+                      <p className="mt-2 text-sm text-red-400">
+                        {errors.plusOneMealSelection.message}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              )}
 
               <div className="sm:col-span-full">
                 <label

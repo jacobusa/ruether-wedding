@@ -30,6 +30,7 @@ export const RSVPFormDataSchema = z.object({
   city: z.string().min(1, "City is required"),
   zip: z.string().min(1, "Zip is required"),
   mealSelection: z.enum(["Chicken", "Salmon", "Vegetarian"]),
+  plusOneMealSelection: z.enum(["Chicken", "Salmon", "Vegetarian"]).optional(),
   accomodation: z.string().optional(),
   accessabilityNeeds: z.string().optional(),
   dietaryRestrictions: z.string().optional(),

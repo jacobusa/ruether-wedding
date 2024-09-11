@@ -38,7 +38,7 @@ export const WeddingParty: React.FC<WeddingPartyProps> = () => {
               className="rounded-full grayscale"
             />
             <span className="text-gray-600 text-sm mx-auto my-2">
-              Bridesmaid
+              Maid Of Honor
             </span>
             <p className="font-medium text-gray-600 text-xl text-center">
               Nicci
@@ -50,6 +50,9 @@ export const WeddingParty: React.FC<WeddingPartyProps> = () => {
               alt="jasmine"
               className="rounded-full grayscale"
             />
+            <span className="text-gray-600 text-sm mx-auto my-2">
+              Bridesmaid
+            </span>
             <p className="font-medium text-gray-600 text-xl text-center">
               Jasmine
             </p>
@@ -60,6 +63,9 @@ export const WeddingParty: React.FC<WeddingPartyProps> = () => {
               alt="kobus"
               className="rounded-full grayscale"
             />
+            <span className="text-gray-600 text-sm mx-auto my-2">
+              Bridesman
+            </span>
             <p className="font-medium text-gray-600 text-xl text-center">
               Kobus
             </p>
@@ -79,24 +85,27 @@ export const WeddingParty: React.FC<WeddingPartyProps> = () => {
             </p>
           </div>
           <div className="flex mx-auto justify-center flex-col max-w-[150px] sm:max-w-[250px]">
-            <img
-              src="https://placehold.co/400x400?text=Teagan"
-              alt="teagan"
-              className="rounded-full "
-            />
-            <span className="text-gray-600 text-sm mx-auto my-2">Best Man</span>
-            <p className="font-medium text-gray-600 text-xl text-center">
-              Teagan
-            </p>
-          </div>
-          <div className="flex mx-auto justify-center flex-col max-w-[150px] sm:max-w-[250px]">
             <Image
               src={deanImage}
               alt="dean"
               className="rounded-full grayscale"
             />
+            <span className="text-gray-600 text-sm mx-auto my-2">Best Man</span>
             <p className="font-medium text-gray-600 text-xl text-center">
               Dean
+            </p>
+          </div>
+          <div className="flex mx-auto justify-center flex-col max-w-[150px] sm:max-w-[250px]">
+            <img
+              src="https://placehold.co/400x400?text=Teagan"
+              alt="teagan"
+              className="rounded-full "
+            />
+            <span className="text-gray-600 text-sm mx-auto my-2">
+              Groomsman
+            </span>
+            <p className="font-medium text-gray-600 text-xl text-center">
+              Teagan
             </p>
           </div>
           <div className="flex mx-auto justify-center flex-col max-w-[150px] sm:max-w-[250px]">
@@ -105,6 +114,9 @@ export const WeddingParty: React.FC<WeddingPartyProps> = () => {
               alt="frans"
               className="rounded-full grayscale"
             />
+            <span className="text-gray-600 text-sm mx-auto my-2">
+              Groomsman
+            </span>
             <p className="font-medium text-gray-600 text-xl text-center">
               Frans
             </p>
