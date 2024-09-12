@@ -4,6 +4,8 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Contact",
+  description:
+    "Contact Kurt and Cecile if you have any questions about the wedding, need help RSVP'ing, or just want to send them a happy message.",
 };
 
 export default async function ContactLayout({
