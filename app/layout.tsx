@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://ruetherwedding.com"),
   title: {
     template: "%s - Ruether Wedding",
-    default: "Ruether Wedding",
+    default: "Kurt and Cecile Ruether's Wedding Website",
   },
   description:
     "Join Kurt and Cecile as they embark on a journey of love, laughter, and forever at their Wedding. Celebrate their vows and be part of this joyous day!",
