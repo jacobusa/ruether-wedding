@@ -12,17 +12,20 @@ export const getUsersByName = query({
     const users = await ctx.db.query("users").collect();
     return users
       .filter((user) => {
-        const fullName = `${user.firstName} ${user.lastName}`;
-        return fullName
+        const fullSearchName = `${user.firstName} ${user.lastName} ${user?.coupleFirstName} ${user?.coupleLastName}`;
+        return fullSearchName
           ?.toLocaleLowerCase()
           .includes(args.name!.toLocaleLowerCase());
       })
-      .slice(0, 1)
+      .slice(0, 2)
       .map((user) => ({
         firstName: user.firstName,
         lastName: user.lastName,
         _id: user._id,
         email: obfuscateEmail(user.email),
+        coupleFirstName: user?.coupleFirstName,
+        coupleLastName: user?.coupleLastName,
+        isCouple: user?.isCouple,
       }));
   },
 });
@@ -36,6 +39,7 @@ export const getUserByIdPublic = query({
     return ctx.db.get(args.id);
   },
 });
+
 export const getViewerInfo = query({
   args: {},
   handler: async (ctx) => {
@@ -87,12 +91,7 @@ export const getUserById = query({
   handler: async (ctx, args) => {
     if (!args.id) return;
     const viewerInfo = await getViewerInfo(ctx, {});
-    if (
-      viewerInfo === null ||
-      !viewerInfo ||
-      !viewerInfo.viewer ||
-      !viewerInfo.viewer.admin
-    ) {
+    if (!viewerInfo || !viewerInfo.viewer || !viewerInfo.viewer.admin) {
       throw new ConvexError("User is not authorized");
     }
     const user = await ctx.db.get(args.id);
@@ -101,6 +100,10 @@ export const getUserById = query({
       firstName: user.firstName,
       lastName: user.lastName,
       email: user.email,
+      isCouple: user.isCouple ?? false,
+      coupleFirstName: user.coupleFirstName,
+      coupleLastName: user.coupleLastName,
+      coupleEmail: user.coupleEmail,
     };
   },
 });
@@ -110,17 +113,22 @@ export const createUser = mutation({
     email: v.string(),
     firstName: v.string(),
     lastName: v.string(),
+    isCouple: v.optional(v.boolean()),
+    coupleFirstName: v.optional(v.string()),
+    coupleLastName: v.optional(v.string()),
+    coupleEmail: v.optional(v.string()),
   },
   handler: async (ctx, args) => {
     const viewerInfo = await getViewerInfo(ctx, {});
-    if (
-      viewerInfo === null ||
-      !viewerInfo ||
-      !viewerInfo.viewer ||
-      !viewerInfo.viewer.admin
-    ) {
+    if (!viewerInfo || !viewerInfo.viewer || !viewerInfo.viewer.admin) {
       throw new ConvexError("User is not authorized");
     }
+    const emailExistsUser = await ctx.db
+      .query("users")
+      .filter((q) => q.eq(q.field("email"), args.email))
+      .collect();
+    if (emailExistsUser.length > 0)
+      throw new ConvexError("Email already exists");
     const userId = await ctx.db.insert("users", args);
     return userId;
   },
@@ -133,18 +141,27 @@ export const updateUser = mutation({
       email: v.string(),
       firstName: v.string(),
       lastName: v.string(),
+      isCouple: v.optional(v.boolean()),
+      coupleFirstName: v.optional(v.string()),
+      coupleLastName: v.optional(v.string()),
+      coupleEmail: v.optional(v.string()),
     }),
   },
   handler: async (ctx, { id, data }) => {
     const viewerInfo = await getViewerInfo(ctx, {});
-    if (
-      viewerInfo === null ||
-      !viewerInfo ||
-      !viewerInfo.viewer ||
-      !viewerInfo.viewer.admin
-    ) {
+    if (!viewerInfo || !viewerInfo.viewer || !viewerInfo.viewer.admin) {
       throw new ConvexError("User is not authorized");
     }
+
+    const emailExistsUser = await ctx.db
+      .query("users")
+      .filter((q) => q.eq(q.field("email"), data?.email))
+      .collect();
+    const isExistingUser =
+      emailExistsUser?.length === 1 && emailExistsUser[0]._id === id;
+    if (emailExistsUser.length > 0 && !isExistingUser)
+      throw new ConvexError("Email already exists");
+
     const userId = await ctx.db.patch(id, {
       ...data,
     });

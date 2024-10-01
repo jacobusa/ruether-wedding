@@ -35,6 +35,9 @@ export const UsersList: React.FC<UsersListProps> = () => {
               Name
             </th>
             <th scope="col" className="px-6 py-3">
+              Couple Name
+            </th>
+            <th scope="col" className="px-6 py-3">
               Email
             </th>
             <th scope="col" className="px-6 py-3"></th>
@@ -56,6 +59,7 @@ export const UsersList: React.FC<UsersListProps> = () => {
                 )}
               </th>
               <td className="px-6 py-4">{`${user.firstName} ${user.lastName}`}</td>
+              <td className="px-6 py-4">{`${user.coupleFirstName ?? ""} ${user.coupleLastName ?? ""}`}</td>
               <td className="px-6 py-4">{user.email}</td>
               <td className="px-6 py-4 space-x-4">
                 <button>

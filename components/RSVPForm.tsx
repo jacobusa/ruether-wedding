@@ -7,7 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { Switch } from "@headlessui/react";
 import { Button } from "./ui/Button";
-import { useMutation } from "convex/react";
+import { useMutation, useQuery } from "convex/react";
 import { api } from "@/convex/_generated/api";
 import { toast } from "sonner";
 import { Id } from "@/convex/_generated/dataModel";
@@ -59,6 +59,11 @@ export const RSVPForm: FC<RSVPFormProps> = ({ rsvp }) => {
   const [hasPlusOne, setHasPlusOne] = useState(false);
   const delta = currentStep - previousStep;
 
+  const { viewer } = useQuery(api.users.getViewerInfo) ?? {};
+  const user = useQuery(api.users.getUserByIdPublic, {
+    id: viewer?._id as Id<"users">,
+  });
+
   useEffect(() => {
     if (!rsvp) return;
     setHasPlusOne(rsvp.hasPlusOne);
@@ -69,10 +74,28 @@ export const RSVPForm: FC<RSVPFormProps> = ({ rsvp }) => {
     handleSubmit,
     trigger,
     formState: { errors, isSubmitting, isSubmitted },
+    getValues,
+    reset,
   } = useForm<RSVPInputs>({
     resolver: zodResolver(RSVPFormDataSchema),
     ...(rsvp && { values: { ...rsvp } }),
   });
+
+  useEffect(() => {
+    if (rsvp?._id || !user) return;
+    // Prefill values for create rsvp form
+    reset({
+      ...getValues(),
+      firstName: user?.firstName,
+      lastName: user?.lastName,
+      email: user?.email,
+      hasPlusOne: user?.isCouple,
+      plusOneFirstName: user?.coupleFirstName,
+      plusOneLastName: user?.coupleLastName,
+      plusOneEmail: user?.coupleEmail,
+    });
+    setHasPlusOne(user?.isCouple ?? false);
+  }, [user, rsvp]);
 
   const addRSVP = useMutation(api.rsvp.addRSVP);
   const updateRSVP = useMutation(api.rsvp.updateRSVP);
@@ -279,6 +302,7 @@ export const RSVPForm: FC<RSVPFormProps> = ({ rsvp }) => {
                 <Switch
                   checked={hasPlusOne}
                   onChange={() => setHasPlusOne(!hasPlusOne)}
+                  disabled={!!user?.isCouple}
                   className="group relative inline-flex h-6 w-11  flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-gray-200 transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 data-[checked]:bg-primary "
                 >
                   <span className="sr-only">I have a plus one</span>
@@ -521,7 +545,7 @@ export const RSVPForm: FC<RSVPFormProps> = ({ rsvp }) => {
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-primary sm:max-w-xs sm:text-sm sm:leading-6"
                   >
                     <option>Chicken</option>
-                    <option>Salmon</option>
+                    <option>Steak</option>
                     <option>Vegetarian</option>
                   </select>
                   {errors.mealSelection?.message && (
@@ -546,7 +570,7 @@ export const RSVPForm: FC<RSVPFormProps> = ({ rsvp }) => {
                       className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-primary sm:max-w-xs sm:text-sm sm:leading-6"
                     >
                       <option>Chicken</option>
-                      <option>Salmon</option>
+                      <option>Steak</option>
                       <option>Vegetarian</option>
                     </select>
                     {errors.plusOneMealSelection?.message && (

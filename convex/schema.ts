@@ -11,6 +11,10 @@ export const userSchema = {
   admin: v.optional(v.boolean()),
   emailVerified: v.optional(v.number()),
   image: v.optional(v.string()),
+  isCouple: v.optional(v.boolean()),
+  coupleFirstName: v.optional(v.string()),
+  coupleLastName: v.optional(v.string()),
+  coupleEmail: v.optional(v.string()),
 };
 
 export const sessionSchema = {
@@ -89,11 +93,11 @@ export const rsvpSchema = {
   zip: v.string(),
   mealSelection: v.union(
     v.literal("Chicken"),
-    v.literal("Salmon"),
+    v.literal("Steak"),
     v.literal("Vegetarian")
   ),
   plusOneMealSelection: v.optional(
-    v.union(v.literal("Chicken"), v.literal("Salmon"), v.literal("Vegetarian"))
+    v.union(v.literal("Chicken"), v.literal("Steak"), v.literal("Vegetarian"))
   ),
   accomodation: v.optional(v.string()),
   accessabilityNeeds: v.optional(v.string()),
