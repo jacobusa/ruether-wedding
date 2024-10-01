@@ -1,5 +1,6 @@
 # Convex + Next.js + Auth.js + Tailwind + shadcn/ui
 
+sm
 This template provides a minimal setup to get Convex working with
 [Next.js](https://nextjs.org/). It uses [Auth.js](https://authjs.dev) for user
 authentication.
