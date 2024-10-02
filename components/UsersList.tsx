@@ -24,6 +24,12 @@ export const UsersList: React.FC<UsersListProps> = () => {
     await deleteUser({ id: deleteModal.id });
     setDeleteModal({ open: false });
   };
+  const getUsersList = () => {
+    if (!usersQuery) return [];
+    const didRSVPUsers = usersQuery?.filter((user) => !!user.didRSVP);
+    const didNotRSVPUsers = usersQuery?.filter((user) => !user.didRSVP);
+    return [...didRSVPUsers, ...didNotRSVPUsers];
+  };
   return (
     <div className="relative overflow-x-auto rounded-xl">
       <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
@@ -45,7 +51,7 @@ export const UsersList: React.FC<UsersListProps> = () => {
           </tr>
         </thead>
         <tbody>
-          {usersQuery?.map((user) => (
+          {getUsersList()?.map((user) => (
             <tr key={user._id} className="bg-white border-b  ">
               <th scope="row" className="px-6 py-4 ">
                 {user.didRSVP ? (
