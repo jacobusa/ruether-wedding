@@ -119,7 +119,7 @@ const ImageCard: React.FC<ImageCardProps> = ({
       <span className="text-gray-600 text-sm mx-auto my-2">{title}</span>
       <p className="font-medium text-gray-600 text-xl text-center">{name}</p>
       <div className="absolute rounded-xl hidden  overflow-auto  -inset-x-20  -inset-y-5 bg-black bg-opacity-80 opacity-0 hover:opacity-100 transition-opacity duration-300 sm:flex items-center content-center  justify-center">
-        <p className="text-white text-xs absolute sm:relative inset-0 font-semibold p-2 ">
+        <p className="text-white text-sm absolute sm:relative inset-0 font-semibold p-4 ">
           {bioText}
         </p>
       </div>

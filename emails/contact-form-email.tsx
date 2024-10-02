@@ -17,9 +17,7 @@ interface ContactFormEmailProps {
   message?: string;
 }
 
-const baseUrl = process.env.VERCEL_URL
-  ? `https://${process.env.VERCEL_URL}`
-  : "https://ruetherwedding.com";
+const baseUrl = "https://ruetherwedding.com";
 export const ContactFormEmail = ({
   email,
   message,
