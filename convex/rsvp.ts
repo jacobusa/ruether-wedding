@@ -13,7 +13,7 @@ export const getRSVP = query({
     if (!userId) return;
     const viewerId = await getViewerId(ctx);
     if (viewerId === null) {
-      throw new ConvexError("User is not authenticated");
+      throw new ConvexError(`User is not authenticated userId: ${userId}`);
     }
     return await ctx.db
       .query("rsvp")
@@ -28,7 +28,9 @@ export const addRSVP = mutation({
   handler: async (ctx, { data }) => {
     const viewerId = await getViewerId(ctx);
     if (viewerId === null) {
-      throw new ConvexError("User is not authenticated");
+      throw new ConvexError(
+        `User is not authenticated data:${JSON.stringify(data)}`
+      );
     }
     const rsvpId = await ctx.db.insert("rsvp", { ...data, userId: viewerId });
     return rsvpId;
@@ -43,7 +45,9 @@ export const updateRSVP = mutation({
   handler: async (ctx, { id, data }) => {
     const viewerId = await getViewerId(ctx);
     if (viewerId === null) {
-      throw new ConvexError("User is not authenticated");
+      throw new ConvexError(
+        `User is not authenticated id: ${id} data:${JSON.stringify(data)}`
+      );
     }
     const plusOneData = data.hasPlusOne
       ? {}

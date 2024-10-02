@@ -46,7 +46,7 @@ export const sendEmail = async (data: ContactFormInputs) => {
     try {
       const data = await resend.emails.send({
         from: "Ruether Wedding <contact-form@ruetherwedding.com>",
-        to: ["jacobusbad@gmail.com"],
+        to: ["jacobusbad@gmail.com", "cecilia.a.badenhorst@gmail.com"],
         subject: "Contact Form Submission",
         // text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
         react: ContactFormEmail({ name, email, message }),

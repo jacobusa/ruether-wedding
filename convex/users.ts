@@ -45,7 +45,7 @@ export const getViewerInfo = query({
   handler: async (ctx) => {
     const viewerId = await getViewerId(ctx);
     if (viewerId === null) {
-      throw new Error("User is not authenticated");
+      throw new ConvexError("User is not authenticated");
     }
     return {
       viewer: await ctx.db.get(viewerId),
@@ -92,7 +92,7 @@ export const getUserById = query({
     if (!args.id) return;
     const viewerInfo = await getViewerInfo(ctx, {});
     if (!viewerInfo || !viewerInfo.viewer || !viewerInfo.viewer.admin) {
-      throw new ConvexError("User is not authorized");
+      throw new ConvexError(`User is not authorized userId:${args.id}`);
     }
     const user = await ctx.db.get(args.id);
     if (!user) return null;
@@ -121,7 +121,9 @@ export const createUser = mutation({
   handler: async (ctx, args) => {
     const viewerInfo = await getViewerInfo(ctx, {});
     if (!viewerInfo || !viewerInfo.viewer || !viewerInfo.viewer.admin) {
-      throw new ConvexError("User is not authorized");
+      throw new ConvexError(
+        `User is not authorized args: ${JSON.stringify(args)}`
+      );
     }
     const emailExistsUser = await ctx.db
       .query("users")
@@ -150,7 +152,9 @@ export const updateUser = mutation({
   handler: async (ctx, { id, data }) => {
     const viewerInfo = await getViewerInfo(ctx, {});
     if (!viewerInfo || !viewerInfo.viewer || !viewerInfo.viewer.admin) {
-      throw new ConvexError("User is not authorized");
+      throw new ConvexError(
+        `User is not authorized id: ${id} data: ${JSON.stringify(data)}`
+      );
     }
 
     const emailExistsUser = await ctx.db
@@ -160,7 +164,9 @@ export const updateUser = mutation({
     const isExistingUser =
       emailExistsUser?.length === 1 && emailExistsUser[0]._id === id;
     if (emailExistsUser.length > 0 && !isExistingUser)
-      throw new ConvexError("Email already exists");
+      throw new ConvexError(
+        `Email already exists id: ${id} data: ${JSON.stringify(data)} `
+      );
 
     const userId = await ctx.db.patch(id, {
       ...data,
@@ -181,7 +187,7 @@ export const deleteUser = mutation({
       !viewerInfo.viewer ||
       !viewerInfo.viewer.admin
     ) {
-      throw new ConvexError("User is not authorized");
+      throw new ConvexError(`User is not authorized userid:${id}`);
     }
     const userId = await ctx.db.delete(id);
     return userId;

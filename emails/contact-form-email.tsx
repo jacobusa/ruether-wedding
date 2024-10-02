@@ -20,7 +20,6 @@ interface ContactFormEmailProps {
 const baseUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
   : "https://ruetherwedding.com";
-
 export const ContactFormEmail = ({
   email,
   message,
@@ -32,7 +31,7 @@ export const ContactFormEmail = ({
     <Body style={main}>
       <Container style={container}>
         <Img
-          src={`${baseUrl}/images/single-gold-flower.png`}
+          src={`${baseUrl}/images/single-gold-flower.jpg`}
           width="100"
           height="70"
           alt="Github"

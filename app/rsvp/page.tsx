@@ -24,7 +24,12 @@ export default function RSVPHome() {
   return (
     <>
       <Navbar />
-      <RSVPForm rsvp={rsvp} />
+      <section className="w-full max-w-4xl mx-auto inset-0 min-h-max flex flex-col justify-between p-4 md:p-24">
+        <h1 className="tracking-widest self-center mb-10 font-bold text-secondary text-[10vw] lg:text-5xl font-brush">
+          RSVP
+        </h1>
+        <RSVPForm rsvp={rsvp} />
+      </section>
     </>
   );
 }

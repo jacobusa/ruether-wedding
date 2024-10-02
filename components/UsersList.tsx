@@ -1,4 +1,5 @@
 "use client";
+import { MdRsvp } from "react-icons/md";
 import { api } from "@/convex/_generated/api";
 import { useMutation, useQuery } from "convex/react";
 import * as React from "react";
@@ -73,6 +74,13 @@ export const UsersList: React.FC<UsersListProps> = () => {
                     <FaEdit />
                   </button>
                 </Link>
+                {user.didRSVP && (
+                  <Link href={`/users/${user._id}/rsvp`}>
+                    <button className="w-5">
+                      <MdRsvp className="w-full h-full" />
+                    </button>
+                  </Link>
+                )}
               </td>
             </tr>
           ))}

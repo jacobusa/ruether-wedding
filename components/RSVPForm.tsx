@@ -149,10 +149,7 @@ export const RSVPForm: FC<RSVPFormProps> = ({ rsvp }) => {
   };
 
   return (
-    <section className="w-full max-w-4xl mx-auto inset-0 min-h-max flex flex-col justify-between p-4 md:p-24">
-      <h1 className="tracking-widest self-center mb-10 font-bold text-secondary text-[10vw] lg:text-5xl font-brush">
-        RSVP
-      </h1>
+    <>
       <nav aria-label="Progress">
         <ol role="list" className="space-y-4 md:flex md:space-x-8 md:space-y-0">
           {steps.map((step, index) => (
@@ -810,6 +807,6 @@ export const RSVPForm: FC<RSVPFormProps> = ({ rsvp }) => {
           </button>
         </div>
       </div>
-    </section>
+    </>
   );
 };
