@@ -44,15 +44,20 @@ export const UserForm: FC<UserFormProps> = ({ user }) => {
   const processForm: SubmitHandler<UserFormInputs> = async (data) => {
     if (!data) return;
     const formData = { ...data, isCouple };
+    const cleanedFormData = {
+      ...formData,
+      email: formData.email.toLocaleLowerCase(),
+      coupleEmail: formData?.coupleEmail?.toLocaleLowerCase(),
+    };
     try {
       if (userId) {
         await updateUser({
           id: userId as Id<"users">,
-          data: formData,
+          data: cleanedFormData,
         });
         toast.success("User Edited!");
       } else {
-        await createUser(formData);
+        await createUser(cleanedFormData);
         toast.success("User Created!");
       }
       router.push("/users");
