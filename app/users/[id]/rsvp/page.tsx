@@ -6,7 +6,7 @@ import { useQuery } from "convex/react";
 import { api } from "@/convex/_generated/api";
 import { useParams } from "next/navigation";
 import { Id } from "@/convex/_generated/dataModel";
-import { PrettyJSON } from "@/components/PrettyJSON";
+import { UserRSVPDetails } from "@/components/UserRSVPDetails";
 
 export default function EditUserHome() {
   const params = useParams<{ id: string }>();
@@ -52,7 +52,7 @@ export default function EditUserHome() {
           {`${user?.firstName ?? ""} ${user?.lastName ?? ""}`} rsvp
         </h1>
         <div className="mx-auto text-black">
-          <PrettyJSON data={displayRsvp} />
+          <UserRSVPDetails rsvpDetails={displayRsvp} />
         </div>
       </section>
     </>
