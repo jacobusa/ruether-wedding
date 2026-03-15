@@ -1,3 +1,7 @@
+Update March 15 2026
+
+- Cecile still wants the site live but doesn't need the contact form or RSVP stuff. Removing convex, email, etc.
+
 # Convex + Next.js + Auth.js + Tailwind + shadcn/ui
 
 This template provides a minimal setup to get Convex working with
